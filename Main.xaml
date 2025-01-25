@@ -94,13 +94,13 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="775.2,671.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="796.0000000000001,671.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Flowchart sap:VirtualizedContainerService.HintSize="728,563.2" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart sap:VirtualizedContainerService.HintSize="600,648" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <Flowchart.Variables>
         <Variable x:TypeArguments="x:Int32" Name="nNumberOfPages" />
         <Variable x:TypeArguments="s:String[]" Default="[{&quot;D:\CV- Jan 2025\Rahul_C_More_RPA_CV.pdf&quot;,&quot;D:\CV- Jan 2025\Rahul_C_More_RPA_CV - Copy.pdf&quot;,&quot;D:\CV- Jan 2025\Rahul_C_More_RPA_CV - Copy - Copy.pdf&quot;}]" Name="listofPDFFiles" />
