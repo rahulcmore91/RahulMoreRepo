@@ -1,19 +1,30 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
-- main
+  branches:
+    include:
+      - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'windows-latest'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+jobs:
+- job: BuildAndTest
+  steps:
+  - task: UseDotNet@2
+    inputs:
+      packageType: 'sdk'
+      version: '7.x'
+      installationPath: $(Agent.ToolsDirectory)/dotnet
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  - task: UiPathInstaller@2
+    inputs:
+      version: 'latest'
+
+  - task: UiPathTest@1
+    inputs:
+      robotLicense: '<Your-Robot-License-File-Path>'
+      projectPath: '$(Build.SourcesDirectory)/YourUiPathProjectPath'
+
+  - task: UiPathBuild@2
+    inputs:
+      projectPath: '$(Build.SourcesDirectory)/YourUiPathProjectPath'
+      buildDirectory: '$(Build.ArtifactStagingDirectory)'
